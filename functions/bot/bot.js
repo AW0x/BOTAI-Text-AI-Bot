@@ -17,7 +17,7 @@ bot.start((ctx) => {
 });
 
 // Reply to user who run command "hi"
-bot.on("message", (msg) => {
+bot.on(message("message"), (msg) => {
   let hi = "hi";
   if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
     console.log("Received 'hi' command from user ");
@@ -32,7 +32,7 @@ bot.on("message", (msg) => {
 });
 
 // Reply to user who run command /ask
-bot.onText(/\/ask (.+)/, (msg, match) => {
+bot.on(message(/\/ask (.+)/), (msg, match) => {
   clientMessageRequest = match[1];
   console.log("Received '/ask' command from user ");
   bot.sendMessage(msg.chat.id, "Hi, anda telah mencoba command /ask");
