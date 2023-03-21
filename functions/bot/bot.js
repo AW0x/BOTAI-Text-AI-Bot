@@ -16,27 +16,27 @@ bot.start((ctx) => {
   }
 });
 
-// Reply to user who run command "hi"
-bot.on("message", (msg) => {
-  let hi = "hi";
-  if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
-    console.log("Received 'hi' command from user ");
-    bot.sendMessage(msg.chat.id, "Hi, user Name");
-  }
+// // Reply to user who run command "hi"
+// bot.on("message", (msg) => {
+//   let hi = "hi";
+//   if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
+//     console.log("Received 'hi' command from user ");
+//     bot.sendMessage(msg.chat.id, "Hi, user Name");
+//   }
 
-  let bye = "bye";
-  if (msg.text.toString().toLowerCase().includes(bye)) {
-    console.log("Received 'bye' command from user ");
-    bot.sendMessage(msg.chat.id, "Hope to see you around again , Bye");
-  }
-});
+//   let bye = "bye";
+//   if (msg.text.toString().toLowerCase().includes(bye)) {
+//     console.log("Received 'bye' command from user ");
+//     bot.sendMessage(msg.chat.id, "Hope to see you around again , Bye");
+//   }
+// });
 
-// Reply to user who run command /ask
-bot.onText(/\/ask (.+)/, (msg, match) => {
-  clientMessageRequest = match[1];
-  console.log("Received '/ask' command from user ");
-  bot.sendMessage(msg.chat.id, "Hi, anda telah mencoba command /ask");
-});
+// // Reply to user who run command /ask
+// bot.onText(/\/ask (.+)/, (msg, match) => {
+//   clientMessageRequest = match[1];
+//   console.log("Received '/ask' command from user ");
+//   bot.sendMessage(msg.chat.id, "Hi, anda telah mencoba command /ask");
+// });
 
 // AWS event handler syntax (https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
 exports.handler = async (event) => {
