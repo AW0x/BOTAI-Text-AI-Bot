@@ -110,3 +110,5 @@ export const handler = async (event) => {
     };
   }
 };
+
+bot.launch();
