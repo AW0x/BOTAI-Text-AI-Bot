@@ -1,5 +1,4 @@
 const TelegramBot = require("node-telegram-bot-api");
-const ogs = require("open-graph-scraper");
 
 // Bot config
 const token = "6043963401:AAHBL-H9afpohGbMb9i6d7JQPicln4ZJg-o";
@@ -7,6 +6,18 @@ const bot = new TelegramBot(token, { polling: true });
 
 let clientMessageRequest;
 
+// Reply to user who run command /start
+bot.start((ctx) => {
+  console.log("Received /start command from user ");
+  try {
+    return ctx.reply("Welcome, " + ctx.message.chat.id + " to BOTAI");
+  } catch (e) {
+    console.error("error in start action:", e);
+    return ctx.reply("Error occured");
+  }
+});
+
+// Reply to user who run command "hi"
 bot.on("message", (msg) => {
   let hi = "hi";
   if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
@@ -19,7 +30,7 @@ bot.on("message", (msg) => {
   }
 });
 
-// Reply to /ask
+// Reply to user who run command /ask
 bot.onText(/\/ask (.+)/, (msg, match) => {
   clientMessageRequest = match[1];
   bot.sendMessage(msg.chat.id, "Hi, anda telah mencoba command /ask");
