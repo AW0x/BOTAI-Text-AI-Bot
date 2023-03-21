@@ -1,6 +1,6 @@
-// require("dotenv").config();
+require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
-const { getImage, getChat } = require("./functions");
+const { getImage, getChat } = require("./functions.js");
 const { Telegraf } = require("telegraf");
 
 // Bot config
