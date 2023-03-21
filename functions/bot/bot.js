@@ -99,7 +99,7 @@ bot.help((ctx) => {
 });
 
 // AWS event handler syntax (https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
-exports.handler = async (event) => {
+exports.handler = async function (event, context) {
   try {
     await bot.handleUpdate(JSON.parse(event.body));
     return { statusCode: 200, body: "" };
