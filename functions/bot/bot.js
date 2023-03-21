@@ -3,22 +3,21 @@ const { Configuration, OpenAIApi } = require("openai");
 const { getImage, getChat } = require("./functions");
 const { Telegraf } = require("telegraf");
 
+// Bot config
+const bot = new Telegraf(process.env.BOT_TOKEN);
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API,
 });
 const openai = new OpenAIApi(configuration);
 module.exports = openai;
 
-// Bot config
-const bot = new Telegraf(process.env.BOT_TOKEN);
-
-let clientMessageRequest;
-
+// BOT START ==========================
 // Reply to user who run command /start
 bot.start((ctx) => {
   console.log("Received /start command from user ");
   try {
-    return ctx.reply("Welcome, " + ctx.message.chat.id + " to BOTAI");
+    return ctx.reply("Welcome, " + ctx.message.from.username + " to BOTAI");
   } catch (e) {
     console.error("error in start action:", e);
     return ctx.reply("Error occured");
