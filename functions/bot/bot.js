@@ -17,18 +17,18 @@ bot.start((ctx) => {
 });
 
 // Reply to user who run command "hi"
-bot.on(message("hi"), async (msg) => {
-  if (msg.text.toString().toLowerCase().indexOf(hi) === 0) {
+bot.command("hi", async (ctx) => {
+  if (ctx.text.toString().toLowerCase().indexOf(ctx) === 0) {
     console.log("Received 'hi' command from user ");
-    await bot.sendMessage(msg.chat.id, "Hi, user Name");
+    return await ctx.reply(ctx.chat.id, "Hi, user Name");
   }
 });
 
 // Reply to user who run command "bye"
-bot.on(message("bye"), async (msg) => {
-  if (msg.text.toString().toLowerCase().includes(bye)) {
+bot.command("bye", async (ctx) => {
+  if (ctx.text.toString().toLowerCase().includes(ctx)) {
     console.log("Received 'bye' command from user ");
-    await bot.sendMessage(msg.chat.id, "Hope to see you around again , Bye");
+    return await ctx.reply(ctx.chat.id, "Hope to see you around again , Bye");
   }
 });
 
@@ -36,7 +36,7 @@ bot.on(message("bye"), async (msg) => {
 bot.on(message(/\/ask (.+)/), async (msg, match) => {
   msg = match[1];
   console.log("Received '/ask' command from user ");
-  await bot.sendMessage(msg.chat.id, "Hi, anda telah mencoba command /ask");
+  await ctx.reply(msg.chat.id, "Hi, anda telah mencoba command /ask");
 });
 
 // AWS event handler syntax (https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
