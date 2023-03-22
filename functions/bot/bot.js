@@ -1,16 +1,16 @@
 require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
-const { getImage, getChat } = require("../helper/helper.js");
+const { getImage, getChat } = require("./helper/helper.js");
 const { Telegraf } = require("telegraf");
-
-// Bot config
-const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API,
 });
 const openai = new OpenAIApi(configuration);
 module.exports = openai;
+
+// Bot config
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 // BOT START ==========================
 // Reply to user who run command /start
