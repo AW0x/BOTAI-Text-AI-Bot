@@ -1,6 +1,6 @@
 [build]
   functions = "functions"
-  command = "netlify-lambda axios dotenv openai install && mkdir ./public"
+  command = "netlify-lambda install && npm install axios dotenv openai &&mkdir ./public"
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
