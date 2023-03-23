@@ -1,7 +1,7 @@
+const { Telegraf } = require("telegraf");
 require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
-const { getImage, getChat } = require("./helper/helper.js");
-const { Telegraf } = require("telegraf");
+const { getImage, getChat } = require("../../helper/helper");
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API,
