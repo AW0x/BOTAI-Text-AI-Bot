@@ -1,5 +1,5 @@
-const { Telegraf } = require("telegraf");
 require("dotenv").config();
+const { Telegraf } = require("telegraf");
 const { Configuration, OpenAIApi } = require("openai");
 const { getImage, getChat } = require("../../helper/helper");
 
