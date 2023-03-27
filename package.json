@@ -1,26 +1,22 @@
 {
-  "name": "openai-bot-bd",
+  "name": "botai-text-ai-bot",
   "version": "1.0.0",
-  "description": "a telegram bot with openai api",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sr-tamim/openai-bot-bd.git"
+    "url": "git+https://github.com/WasiProjects/BOTAI-Text-AI-Bot.git"
   },
-  "keywords": [
-    "telegram-bot",
-    "openai",
-    "chatgpt"
-  ],
-  "author": "\"SR Tamim\", \"Sharafat Karim\"",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sr-tamim/openai-bot-bd/issues"
+    "url": "https://github.com/WasiProjects/BOTAI-Text-AI-Bot/issues"
   },
-  "homepage": "https://github.com/sr-tamim/openai-bot-bd#readme",
+  "homepage": "https://github.com/WasiProjects/BOTAI-Text-AI-Bot#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "netlify-lambda": "^2.0.16",
