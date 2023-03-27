@@ -10,7 +10,9 @@ bot.start((ctx) => {
     ctx.reply(
       "Hi, I am BOTAI. AI-integrated telegram bot built to help you with your daily life"
     );
-    return ctx.reply("Welcome, " + ctx.message.from.username + " to BOTAI bot");
+    return ctx.reply(
+      "Welcome, @" + ctx.message.from.username + " to BOTAI bot"
+    );
   } catch (e) {
     console.error("error in start action:", e);
     return ctx.reply("Error occured");
