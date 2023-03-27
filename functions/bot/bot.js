@@ -62,7 +62,7 @@ exports.handler = async (event) => {
       body: "This endpoint is meant for bot and telegram communication",
     };
   }
-// };
+};
 
 bot
   .launch()
