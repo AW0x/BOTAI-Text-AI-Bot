@@ -74,11 +74,11 @@ exports.handler = async (event) => {
   }
 };
 
-bot
-  .launch()
-  .then(() => {
-    console.log("Bot started!");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// bot
+//   .launch()
+//   .then(() => {
+//     console.log("Bot started!");
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
