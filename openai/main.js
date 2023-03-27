@@ -19,18 +19,18 @@ async function generateChatResponse(message, user) {
   return completion.data.choices[0].message.content;
 }
 
-const getResponse = async (text) => {
+const getResponse = async (responseToUser) => {
   try {
     const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: text,
+      model: "gpt-3.5-turbo",
+      prompt: responseToUser,
       temperature: 0,
       max_tokens: 1000,
       frequency_penalty: 0.2,
       presence_penalty: 0,
     });
 
-    return response.data.choices[0].text.trim();
+    return response.data.choices[0].responseToUser.trim();
   } catch (error) {
     console.log(error);
   }
