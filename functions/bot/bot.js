@@ -40,15 +40,15 @@ bot.on("message", async (ctx) => {
   }
 });
 
-// bot.help((ctx) => {
-//   ctx.reply(
-//     "BOTAI is AI-integrated telegram bot built to help you with your daily life"
-//   );
-//   ctx.reply(
-//     'This bot was created by Vii. Chat if need anithing at Discord "Xie#5161".'
-//   );
-//   ctx.reply("Thanks You, for using BOTAI bot");
-// });
+bot.help((ctx) => {
+  ctx.reply(
+    "BOTAI is AI-integrated telegram bot built to help you with your daily life"
+  );
+  ctx.reply(
+    'This bot was created by Vii. Chat if need anithing at Discord "Xie#5161".'
+  );
+  ctx.reply("Thanks You, for using BOTAI bot");
+});
 
 // AWS event handler syntax (https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
 exports.handler = async (event) => {
