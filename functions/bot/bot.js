@@ -24,7 +24,7 @@ bot.on("message", async (ctx) => {
   try {
     if (text) {
       ctx.sendChatAction("typing");
-      const res = await getResponse(responseToUser);
+      const res = await getResponse(text);
       if (res) {
         ctx.telegram.sendMessage(ctx.message.chat.id, res, {
           reply_to_message_id: ctx.message.message_id,
