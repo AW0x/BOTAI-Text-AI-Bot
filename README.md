@@ -8,7 +8,7 @@ Hi, I am BOTAI. I am a bot created to help you complete your daily tasks.
 
 This bot was created by Vii.
 
-Discord "Xie#5161".
+Disqord "Vii (OrdinaryPerson)#2396".
 
 # ID
 
@@ -18,4 +18,4 @@ Hai, saya adalah BOTAI. saya adalah bot yang dibuat untuk menbantu menyelesaikan
 
 Bot ini dibuat oleh Vii
 
-Discord "Xie#5161".
+Disqord "Vii (OrdinaryPerson)#2396"
