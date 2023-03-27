@@ -6,6 +6,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.start((ctx) => {
   console.log("Received /start command");
   try {
+    ctx.sendChatAction("typing");
     ctx.reply("Please ask anything, BOTAI will response your question");
     ctx.reply(
       "BOTAI is AI-integrated telegram bot built to help you with your daily life"
@@ -21,6 +22,13 @@ bot.start((ctx) => {
 
 bot.on("message", async (ctx) => {
   const text = ctx.message.text?.toLowerCase();
+  console.log(
+    "User @" +
+      ctx.message.from.username +
+      " Send Message '" +
+      text +
+      "' to BOTAI Bot"
+  );
   try {
     if (text) {
       ctx.sendChatAction("typing");
@@ -42,15 +50,15 @@ bot.on("message", async (ctx) => {
   }
 });
 
-// bot.help((ctx) => {
-//   ctx.reply(
-//     "BOTAI is AI-integrated telegram bot built to help you with your daily life"
-//   );
-//   ctx.reply(
-//     'This bot was created by Vii. Chat if need anithing at Discord "Xie#5161".'
-//   );
-//   ctx.reply("Thanks You, for using BOTAI bot");
-// });
+bot.help((ctx) => {
+  ctx.reply(
+    "BOTAI is AI-integrated telegram bot built to help you with your daily life"
+  );
+  ctx.reply(
+    'This bot was created by Vii. Chat if need anithing at Discord "Xie#5161".'
+  );
+  ctx.reply("Thanks You, for using BOTAI bot");
+});
 
 // AWS event handler syntax (https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
 exports.handler = async (event) => {
