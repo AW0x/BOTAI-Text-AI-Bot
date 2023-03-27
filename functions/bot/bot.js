@@ -9,7 +9,7 @@ bot.start((ctx) => {
     ctx.reply(
       "Hi, I am BOTAI. AI-integrated telegram bot built to help you with your daily life"
     );
-    ctx.reply("Please ask anything, BOTAI will response your question.");
+    ctx.reply("Please ask anything, BOTAI will response your question");
     return ctx.reply("Welcome, " + ctx.message.from.username + " to BOTAI bot");
   } catch (e) {
     console.error("error in start action:", e);
@@ -51,17 +51,17 @@ bot.help((ctx) => {
 });
 
 // AWS event handler syntax (https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
-// exports.handler = async (event) => {
-//   try {
-//     await bot.handleUpdate(JSON.parse(event.body));
-//     return { statusCode: 200, body: "" };
-//   } catch (e) {
-//     console.error("error in handler:", e);
-//     return {
-//       statusCode: 400,
-//       body: "This endpoint is meant for bot and telegram communication",
-//     };
-//   }
+exports.handler = async (event) => {
+  try {
+    await bot.handleUpdate(JSON.parse(event.body));
+    return { statusCode: 200, body: "" };
+  } catch (e) {
+    console.error("error in handler:", e);
+    return {
+      statusCode: 400,
+      body: "This endpoint is meant for bot and telegram communication",
+    };
+  }
 // };
 
 bot
